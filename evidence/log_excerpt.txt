@@ -1,0 +1,23 @@
+# Lines from logs/pawpal.log written while running sitter_demo.py and ask.py above
+# (conflicts, agent tool calls, guardrail triggers)
+
+2026-11-18 00:47:45,605 INFO    pawpal.planner: Conflict [warning] Mochi's Midday walk must happen 12:00–13:00 on Mon Nov 23, but that time is taken by Biology lab (11:30–13:30).
+2026-11-18 00:47:45,605 INFO    pawpal.planner: Conflict [critical] Luna's Thyroid medication must happen 08:00–08:30 on Tue Nov 24, but that time is taken by Dentist appointment (07:30–09:00).
+2026-11-18 00:47:45,605 INFO    pawpal.planner: Conflict [critical] Luna's Breakfast must happen 08:00–09:00 on Tue Nov 24, but that time is taken by Dentist appointment (07:30–09:00).
+2026-11-18 00:47:45,605 INFO    pawpal.planner: Conflict [critical] Luna's Dinner must happen 18:00–18:30 on Wed Nov 25, but that time is taken by Work shift (16:30–19:30).
+2026-11-18 00:47:45,605 INFO    pawpal.planner: Conflict [critical] Mochi's Dinner must happen 17:30–18:30 on Wed Nov 25, but that time is taken by Work shift (16:30–19:30).
+2026-11-18 00:47:45,605 INFO    pawpal.planner: Conflict [warning] Mochi's Midday walk must happen 12:00–13:00 on Fri Nov 27, but that time is taken by Study group (12:00–13:00).
+2026-11-18 00:47:45,606 INFO    pawpal.agent: Resolving conflicts offline
+2026-11-18 00:47:45,607 INFO    pawpal.planner: Moved mochi-midday-walk on 2026-11-23 to 11:00 (Shifted within the owner's 60-minute flex to fit around your plans.)
+2026-11-18 00:47:45,607 INFO    pawpal.agent: Agent tool move_task({"date": "2026-11-23", "task_id": "mochi-midday-walk", "new_start": "11:00", "reason": "Shifted within the owner's 60-minute flex to fit around your plans."}) -> OK: Mon Nov 23: Mochi's Midday walk moved to 11:00–11:30 — Shifted within the owner's 60-minute flex to fit around your plans.
+2026-11-18 00:47:45,607 INFO    pawpal.agent: Agent tool flag_for_owner({"date": "2026-11-24", "task_id": "luna-thyroid-medication", "suggestion": "Thyroid medication can't move (window 08:00\u201308:30). Ask the owner or a backup person to cover it, or reschedule your co) -> Flagged Luna's Thyroid medication on Tue Nov 24.
+2026-11-18 00:47:45,607 INFO    pawpal.planner: Moved luna-breakfast on 2026-11-24 to 09:00 (Shifted within the owner's 30-minute flex to fit around your plans.)
+2026-11-18 00:47:45,607 INFO    pawpal.agent: Agent tool move_task({"date": "2026-11-24", "task_id": "luna-breakfast", "new_start": "09:00", "reason": "Shifted within the owner's 30-minute flex to fit around your plans."}) -> OK: Tue Nov 24: Luna's Breakfast moved to 09:00–09:05 — Shifted within the owner's 30-minute flex to fit around your plans.
+2026-11-18 00:47:45,607 INFO    pawpal.agent: Agent tool flag_for_owner({"date": "2026-11-25", "task_id": "luna-dinner", "suggestion": "No free time for Dinner within 18:00\u201318:30 \u00b1 30 min. Ask the owner or a backup person to cover it, or reschedule your commitme) -> Flagged Luna's Dinner on Wed Nov 25.
+2026-11-18 00:47:45,607 INFO    pawpal.agent: Agent tool flag_for_owner({"date": "2026-11-25", "task_id": "mochi-dinner", "suggestion": "No free time for Dinner within 17:30\u201318:30 \u00b1 30 min. Ask the owner or a backup person to cover it, or reschedule your commitm) -> Flagged Mochi's Dinner on Wed Nov 25.
+2026-11-18 00:47:45,607 INFO    pawpal.planner: Moved mochi-midday-walk on 2026-11-27 to 11:30 (Shifted within the owner's 60-minute flex to fit around your plans.)
+2026-11-18 00:47:45,607 INFO    pawpal.agent: Agent tool move_task({"date": "2026-11-27", "task_id": "mochi-midday-walk", "new_start": "11:30", "reason": "Shifted within the owner's 60-minute flex to fit around your plans."}) -> OK: Fri Nov 27: Mochi's Midday walk moved to 11:30–12:00 — Shifted within the owner's 60-minute flex to fit around your plans.
+2026-11-18 00:47:45,608 WARNING pawpal.guardrails: Guardrail: dose-change question blocked: 'Can I give Luna an extra pill tonight?'
+2026-11-18 00:47:45,707 WARNING pawpal.guardrails: Guardrail: dose-change question blocked: 'Can I give Luna an extra pill tonight?'
+2026-11-18 00:47:45,740 WARNING pawpal.guardrails: Guardrail: human medication question blocked: 'Is Tylenol safe for Mochi?'
+2026-11-18 00:47:45,773 WARNING pawpal.guardrails: Guardrail: emergency language detected: 'Mochi ate chocolate, what do I do?'

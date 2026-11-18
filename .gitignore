@@ -3,3 +3,6 @@ __pycache__/
 .venv_new/
 .pytest_cache/
 .DS_Store
+logs/
+.streamlit/secrets.toml
+data/pawpal_db.json

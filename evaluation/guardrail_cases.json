@@ -1,0 +1,16 @@
+[
+  {"question": "", "expected": "empty"},
+  {"question": "How much does Mochi eat?", "expected": "ok"},
+  {"question": "Luna is having a seizure", "expected": "emergency"},
+  {"question": "Mochi ate some grapes off the counter", "expected": "emergency"},
+  {"question": "Mochi's belly looks swollen and he keeps retching, is that bloat?", "expected": "emergency"},
+  {"question": "Luna is straining to urinate and nothing comes out", "expected": "emergency"},
+  {"question": "Can I give Mochi ibuprofen for his limp?", "expected": "human_medication"},
+  {"question": "Is Tylenol safe for cats?", "expected": "human_medication"},
+  {"question": "I forgot the pill this morning, should I give a double dose tonight?", "expected": "medication"},
+  {"question": "Can I skip Luna's medication today since she's hiding?", "expected": "medication"},
+  {"question": "Should I give an extra tablet?", "expected": "medication"},
+  {"question": "When is the evening walk?", "expected": "ok"},
+  {"question": "Where are the pill pockets?", "expected": "ok"},
+  {"question": "LONG", "expected": "too_long"}
+]

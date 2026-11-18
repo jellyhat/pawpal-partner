@@ -1,0 +1,72 @@
+---
+title: PawPal+ Sitter — system overview
+---
+flowchart LR
+    %% ---------- INPUT ----------
+    subgraph INPUT["1 · Input"]
+        Owner(["👤 Owner<br/>pets, traits, health,<br/>routine tasks, vet, emergency plan"])
+        Sitter(["👤 Sitter<br/>chosen owner + pets,<br/>own commitments, questions"])
+    end
+
+    Store[("💾 Local JSON store<br/>data/pawpal_db.json")]
+
+    %% ---------- PROCESS ----------
+    subgraph PROCESS["2 · Process"]
+        Planner["📅 Planner<br/>fits tasks in time windows,<br/>keeps task-to-task gaps"]
+        Agent["🤖 Conflict agent<br/>Claude + tools<br/>(rule-based fallback offline)"]
+        Validator{"🛡️ Move validator<br/>window + flex, no overlap,<br/>dependency gap"}
+        InGuard{"🛡️ Input guardrail<br/>emergency, dose change,<br/>human medicine"}
+        Retriever["🔎 Retriever (BM25)<br/>owner notes + care guides"]
+        Generator["🤖 Claude answer<br/>cites sources [n]"]
+        OutGuard{"🛡️ Output guardrail<br/>real citations,<br/>no invented amounts"}
+    end
+
+    %% ---------- OUTPUT ----------
+    subgraph OUTPUT["3 · Output"]
+        Schedule["Daily / weekly schedule<br/>+ 🚨 conflict alerts"]
+        Changes["Moved tasks + flagged items<br/>+ audit trail"]
+        Answer["Cited answer<br/>or safe fixed message"]
+    end
+
+    %% ---------- CHECKING ----------
+    subgraph CHECK["Checking AI results"]
+        Review(["👤 Human review<br/>sitter reviews audit trail, can Undo;<br/>flagged items go to owner"])
+        Tests["🧪 pytest<br/>unit + UI tests, fake Claude client"]
+        Eval["📊 Evaluator<br/>planner, retrieval, guardrail,<br/>resolver scorecards"]
+        Logs[("🧾 logs/pawpal.log")]
+    end
+
+    Owner --> Store
+    Sitter --> Store
+    Store --> Planner
+    Planner --> Schedule
+    Schedule -- "conflicts" --> Agent
+    Agent -- "move_task" --> Validator
+    Validator -- "approved" --> Planner
+    Validator -- "rejected" --> Agent
+    Agent -- "search_care_notes" --> Retriever
+    Agent --> Changes
+
+    Sitter -- "question" --> InGuard
+    InGuard -- "blocked / emergency" --> Answer
+    InGuard -- "allowed" --> Retriever
+    Store --> Retriever
+    Retriever --> Generator
+    Generator --> OutGuard
+    OutGuard -- "pass" --> Answer
+    OutGuard -- "fail: quote sources instead" --> Answer
+
+    Changes --> Review
+    Answer --> Review
+    Review -. "undo / owner decides" .-> Planner
+
+    Tests -.-> Planner
+    Tests -.-> Agent
+    Tests -.-> Retriever
+    Eval -.-> Planner
+    Eval -.-> Retriever
+    Eval -.-> InGuard
+    Eval -.-> Agent
+    Agent -.-> Logs
+    InGuard -.-> Logs
+    Planner -.-> Logs

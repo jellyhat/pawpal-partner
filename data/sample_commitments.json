@@ -1,0 +1,6 @@
+[
+  {"title": "Biology lab", "day_offset": 0, "start": "11:30", "end": "13:30"},
+  {"title": "Dentist appointment", "day_offset": 1, "start": "07:30", "end": "09:00"},
+  {"title": "Work shift", "day_offset": 2, "start": "16:30", "end": "19:30"},
+  {"title": "Study group", "day_offset": 4, "start": "12:00", "end": "13:00"}
+]

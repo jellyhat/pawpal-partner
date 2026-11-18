@@ -1,0 +1,90 @@
+[
+  {
+    "question": "How much does Mochi eat for breakfast?",
+    "expected": "task:mochi-breakfast"
+  },
+  {
+    "question": "Where is Luna's pill?",
+    "expected": "task:luna-thyroid-medication"
+  },
+  {
+    "question": "What time does Luna get her thyroid medication?",
+    "expected": "task:luna-thyroid-medication"
+  },
+  {
+    "question": "What do I feed Luna for dinner?",
+    "expected": "task:luna-dinner"
+  },
+  {
+    "question": "Which leash do I use for Mochi's evening walk?",
+    "expected": "task:mochi-evening-walk"
+  },
+  {
+    "question": "Can Mochi go to the dog park?",
+    "expected": "task:mochi-midday-walk"
+  },
+  {
+    "question": "Is Mochi allergic to anything?",
+    "expected": "health:Mochi"
+  },
+  {
+    "question": "Can Luna go outside?",
+    "expected": "pet:Luna"
+  },
+  {
+    "question": "Where is the brush for Mochi?",
+    "expected": "task:mochi-brushing"
+  },
+  {
+    "question": "How do I clean Luna's litter box?",
+    "expected": "task:luna-litter-box"
+  },
+  {
+    "question": "Mochi ate chocolate, what do I do?",
+    "expected": "toxic_foods#dogs"
+  },
+  {
+    "question": "Are lilies dangerous for cats?",
+    "expected": "toxic_foods#cats"
+  },
+  {
+    "question": "How hot is too hot for a walk?",
+    "expected": "walking_exercise#hot-and-cold-weather"
+  },
+  {
+    "question": "What should I do about a missed dose?",
+    "expected": "medication#missed-doses"
+  },
+  {
+    "question": "The cat is straining in the litter box",
+    "expected": "grooming#litter-boxes"
+  },
+  {
+    "question": "Mochi skipped his dinner, should I worry?",
+    "expected": "feeding#appetite-changes"
+  },
+  {
+    "question": "How often should I change the water bowl?",
+    "expected": "feeding#water"
+  },
+  {
+    "question": "What is the vet's phone number?",
+    "expected": "owner:contacts"
+  },
+  {
+    "question": "What should I do in an emergency?",
+    "expected": "owner:emergency"
+  },
+  {
+    "question": "Where is the pet carrier?",
+    "expected": "owner:emergency"
+  },
+  {
+    "question": "Does Luna take any medication or have health problems?",
+    "expected": "health:Luna"
+  },
+  {
+    "question": "Is Mochi scared of anything?",
+    "expected": "pet:Mochi"
+  }
+]

@@ -1,0 +1,161 @@
+[
+  {
+    "name": "No commitments: everything fits",
+    "commitments": [],
+    "days": 7,
+    "expected_conflicts": []
+  },
+  {
+    "name": "Commitment that leaves room inside the window",
+    "commitments": [
+      {
+        "title": "Call",
+        "day_offset": 0,
+        "start": "07:00",
+        "end": "07:40"
+      }
+    ],
+    "days": 1,
+    "expected_conflicts": []
+  },
+  {
+    "name": "Appointment covers medication window",
+    "commitments": [
+      {
+        "title": "Dentist",
+        "day_offset": 1,
+        "start": "07:30",
+        "end": "09:00"
+      }
+    ],
+    "days": 2,
+    "expected_conflicts": [
+      [
+        1,
+        "luna-thyroid-medication"
+      ],
+      [
+        1,
+        "luna-breakfast"
+      ]
+    ]
+  },
+  {
+    "name": "Work shift over dinner time",
+    "commitments": [
+      {
+        "title": "Shift",
+        "day_offset": 0,
+        "start": "16:30",
+        "end": "19:30"
+      }
+    ],
+    "days": 1,
+    "expected_conflicts": [
+      [
+        0,
+        "mochi-dinner"
+      ],
+      [
+        0,
+        "luna-dinner"
+      ]
+    ]
+  },
+  {
+    "name": "Weekly task only conflicts on its day (Wed)",
+    "commitments": [
+      {
+        "title": "Movie",
+        "day_offset": 1,
+        "start": "19:00",
+        "end": "21:00"
+      },
+      {
+        "title": "Movie",
+        "day_offset": 2,
+        "start": "19:00",
+        "end": "21:00"
+      }
+    ],
+    "days": 3,
+    "expected_conflicts": [
+      [
+        2,
+        "mochi-brushing"
+      ]
+    ]
+  },
+  {
+    "name": "Commitment on a different day does not leak",
+    "commitments": [
+      {
+        "title": "Lab",
+        "day_offset": 3,
+        "start": "11:30",
+        "end": "13:30"
+      }
+    ],
+    "days": 3,
+    "expected_conflicts": []
+  },
+  {
+    "name": "Late-night event blocks evening walk and litter",
+    "commitments": [
+      {
+        "title": "Concert",
+        "day_offset": 0,
+        "start": "19:45",
+        "end": "23:00"
+      }
+    ],
+    "days": 1,
+    "expected_conflicts": [
+      [
+        0,
+        "luna-litter-box"
+      ],
+      [
+        0,
+        "mochi-evening-walk"
+      ]
+    ]
+  },
+  {
+    "name": "Late breakfast pushes dinner later but it still fits",
+    "commitments": [
+      {
+        "title": "Run",
+        "day_offset": 0,
+        "start": "07:00",
+        "end": "07:45"
+      }
+    ],
+    "days": 1,
+    "expected_conflicts": []
+  },
+  {
+    "name": "Late breakfast + evening plans: 10 h gap leaves no room for dinner",
+    "commitments": [
+      {
+        "title": "Run",
+        "day_offset": 0,
+        "start": "07:00",
+        "end": "07:50"
+      },
+      {
+        "title": "Call",
+        "day_offset": 0,
+        "start": "17:45",
+        "end": "18:25"
+      }
+    ],
+    "days": 1,
+    "expected_conflicts": [
+      [
+        0,
+        "mochi-dinner"
+      ]
+    ]
+  }
+]

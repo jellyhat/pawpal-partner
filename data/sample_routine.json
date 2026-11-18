@@ -1,0 +1,146 @@
+{
+  "owner_name": "Jordan",
+  "owner_contact": "Jordan (cell) 555-0142",
+  "pets": [
+    {
+      "name": "Mochi",
+      "species": "dog",
+      "notes": "Loves the squeaky hedgehog toy.",
+      "vet_contact": "",
+      "breed": "Shiba Inu",
+      "age": "4 years",
+      "traits": "Pulls on the leash near squirrels. Gets anxious during thunderstorms; let him hide in his crate. Friendly with people, unsure of big dogs.",
+      "requirements": "Sleeps in the crate at night with the door open. Not allowed on the couch. Needs about an hour of walking a day.",
+      "health_conditions": "Healthy. Mild seasonal itching in spring.",
+      "medications": "None.",
+      "allergies": "Allergic to chicken. No chicken treats or food."
+    },
+    {
+      "name": "Luna",
+      "species": "cat",
+      "notes": "",
+      "vet_contact": "",
+      "breed": "Domestic shorthair",
+      "age": "12 years",
+      "traits": "Shy with strangers; give her space for the first day. Likes to sit in the sunny window.",
+      "requirements": "Indoor only. Must never go outside. Check doors before leaving.",
+      "health_conditions": "Hyperthyroidism, managed with daily medication. Mild kidney changes, so keep fresh water available.",
+      "medications": "Methimazole 1/2 tablet every morning at 8:00 (see routine).",
+      "allergies": "None known."
+    }
+  ],
+  "tasks": [
+    {
+      "pet_name": "Mochi",
+      "title": "Breakfast",
+      "window_start": "07:00",
+      "window_end": "08:00",
+      "duration_minutes": 10,
+      "priority": "high",
+      "days": "daily",
+      "flex_minutes": 30,
+      "description": "1 cup of the salmon kibble from the blue bin plus 1 tbsp canned pumpkin. Feed in the kitchen, away from Luna's bowl."
+    },
+    {
+      "pet_name": "Luna",
+      "title": "Thyroid medication",
+      "window_start": "08:00",
+      "window_end": "08:30",
+      "duration_minutes": 5,
+      "priority": "high",
+      "days": "daily",
+      "flex_minutes": 0,
+      "description": "1/2 tablet of methimazole hidden in a pill pocket (on top of the fridge). Give within 30 minutes of 8:00 every day. Watch that she swallows it."
+    },
+    {
+      "pet_name": "Luna",
+      "title": "Breakfast",
+      "window_start": "08:00",
+      "window_end": "09:00",
+      "duration_minutes": 5,
+      "priority": "high",
+      "days": "daily",
+      "flex_minutes": 30,
+      "description": "Half a can of the senior pate on the laundry room shelf. Feed after her pill.",
+      "after_task": "luna-thyroid-medication",
+      "after_minutes": 5
+    },
+    {
+      "pet_name": "Mochi",
+      "title": "Midday walk",
+      "window_start": "12:00",
+      "window_end": "13:00",
+      "duration_minutes": 30,
+      "priority": "medium",
+      "days": "daily",
+      "flex_minutes": 60,
+      "description": "Loop around the park on the harness, not the collar. Bring poop bags from the hook by the door. Avoid the dog park."
+    },
+    {
+      "pet_name": "Mochi",
+      "title": "Dinner",
+      "window_start": "17:30",
+      "window_end": "18:30",
+      "duration_minutes": 10,
+      "priority": "high",
+      "days": "daily",
+      "flex_minutes": 30,
+      "description": "1 cup of the salmon kibble. One dental chew after dinner.",
+      "after_task": "mochi-breakfast",
+      "after_minutes": 600
+    },
+    {
+      "pet_name": "Luna",
+      "title": "Dinner",
+      "window_start": "18:00",
+      "window_end": "18:30",
+      "duration_minutes": 5,
+      "priority": "high",
+      "days": "daily",
+      "flex_minutes": 30,
+      "description": "Other half of the can of senior pate. Refrigerate leftovers covered."
+    },
+    {
+      "pet_name": "Mochi",
+      "title": "Brushing",
+      "window_start": "19:00",
+      "window_end": "21:00",
+      "duration_minutes": 15,
+      "priority": "low",
+      "days": [
+        "Wed",
+        "Sun"
+      ],
+      "flex_minutes": 60,
+      "description": "Use the slicker brush in the hall closet. He sheds a lot; brush outside if the weather is nice."
+    },
+    {
+      "pet_name": "Luna",
+      "title": "Litter box",
+      "window_start": "20:00",
+      "window_end": "22:00",
+      "duration_minutes": 10,
+      "priority": "medium",
+      "days": "daily",
+      "flex_minutes": 60,
+      "description": "Scoop the box in the laundry room and top up with unscented litter. Tell me if there is no urine clump for a whole day."
+    },
+    {
+      "pet_name": "Mochi",
+      "title": "Evening walk",
+      "window_start": "21:00",
+      "window_end": "22:00",
+      "duration_minutes": 20,
+      "priority": "medium",
+      "days": "daily",
+      "flex_minutes": 30,
+      "description": "Short walk around the block before bed. Use the reflective leash."
+    }
+  ],
+  "vet_name": "Maple Street Animal Clinic",
+  "vet_phone": "555-0199",
+  "vet_address": "210 Maple St (open 8am-6pm)",
+  "emergency_contact": "After hours: Riverside 24-Hour Animal ER 555-0177. Backup: my sister Casey 555-0163",
+  "emergency_procedures": "If a pet is hurt, can't breathe, has a seizure, or eats something toxic, call the vet first (or the 24-hour ER after 6pm), then call me. The pet carrier is in the hall closet and Mochi's leash hangs by the front door. Vaccination records are in the red folder on the fridge. My card is on file at both clinics.",
+  "house_notes": "Spare key is with Casey. Keep the back gate latched. Thermostat stays at 68."
+}

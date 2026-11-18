@@ -1,0 +1,14 @@
+$ python -m evaluation.evaluate
+# generated 2026-11-18 00:47 · Python 3.9.6 · offline mode · exit code 0
+
+
+PawPal+ evaluation
+====================================================
+PASS  Planner scenarios                  100%  (need 100%)
+PASS  Retrieval hit@3                     95%  (need 85%)
+PASS  Guardrails                         100%  (need 100%)
+PASS  Conflict resolver (offline)        100%  (need 100%)
+      Retrieval hit@1 82%, MRR 0.88
+
+Details:
+ - MISS 'Mochi skipped his dinner, should I worry?': expected feeding#appetite-changes, got ['task:mochi-dinner', 'pet:Mochi', 'task:luna-dinner']

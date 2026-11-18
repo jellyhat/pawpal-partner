@@ -56,10 +56,14 @@ One tradeoff is simple ordering in organize_tasks(). It orders by due time, prio
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
 - What kinds of prompts or questions were most helpful?
 
+I used it for the mermaid diagrams, fleshed out each class with AI, hooked it up to the app.py with AI and it also wrote all the tests. I think the prompts that were most useful were the ones where I asked what logic needed to be adjusted to prioritize what I needed such as making the relationship between pets and owners and tasks, and what the scheduler should take into account.
+
 **b. Judgment and verification**
 
 - Describe one moment where you did not accept an AI suggestion as-is.
 - How did you evaluate or verify what the AI suggested?
+
+The AI did suggest to have a preferred time for each task but I did not take that suggestion as I felt that was unnecessary and might provide too many constraints. I think having a due time for the user to add would be fine.
 
 ---
 
@@ -70,10 +74,14 @@ One tradeoff is simple ordering in organize_tasks(). It orders by due time, prio
 - What behaviors did you test?
 - Why were these tests important?
 
+I tested the UI myself as while the logic might look solid, how it actually loads is a different story. I noticed that it had a default user and only really let you put one Owner because of this behavior. I had to adjust so there were places to input different Owners and make this required. I think these tests were important because I had given these instructions previously and shown in my diagram but it had not implemented it on the front end, only had methods in the back end.
+
 **b. Confidence**
 
 - How confident are you that your scheduler works correctly?
 - What edge cases would you test next if you had more time?
+
+In my testing for most tasks that do interfere or had different schedules, the scheduler works correclty. If I had more time I would want to try to jailbreak my own app and see the worst case if a person had many pets and many problems that were urgent, what would it suggest to do.
 
 ---
 
@@ -83,10 +91,16 @@ One tradeoff is simple ordering in organize_tasks(). It orders by due time, prio
 
 - What part of this project are you most satisfied with?
 
+I was satisfied with how fast the mermaid diagrams were made to my specifications. I liked how the error handling and test writing were written out for me instead of doing it by hand.
+
 **b. What you would improve**
 
 - If you had another iteration, what would you improve or redesign?
 
+I would want to redo the front end, I think it is not too intuitive but it wasn't in the project scope.
+
 **c. Key takeaway**
 
 - What is one important thing you learned about designing systems or working with AI on this project?
+
+I think its important to always test the front end of these AI projects, because even given specifications they might have implemented something just for the testing and not for future use.

@@ -1,0 +1,100 @@
+$ python sitter_demo.py
+# generated 2026-11-18 00:47 · Python 3.9.6 · offline mode · exit code 0
+
+PawPal+ Sitter — Jordan's pets, Mon Nov 23 to Sun Nov 29
+AI: offline mode
+
+CONFLICT ALERTS
+  ! Mochi's Midday walk must happen 12:00–13:00 on Mon Nov 23, but that time is taken by Biology lab (11:30–13:30).
+ !! Luna's Thyroid medication must happen 08:00–08:30 on Tue Nov 24, but that time is taken by Dentist appointment (07:30–09:00).
+ !! Luna's Breakfast must happen 08:00–09:00 on Tue Nov 24, but that time is taken by Dentist appointment (07:30–09:00).
+ !! Luna's Dinner must happen 18:00–18:30 on Wed Nov 25, but that time is taken by Work shift (16:30–19:30).
+ !! Mochi's Dinner must happen 17:30–18:30 on Wed Nov 25, but that time is taken by Work shift (16:30–19:30).
+  ! Mochi's Midday walk must happen 12:00–13:00 on Fri Nov 27, but that time is taken by Study group (12:00–13:00).
+
+RESOLVER
+  Moved 3 task(s) within the owner's flex time. 3 conflict(s) need a decision from you or the owner.
+  moved:   Mon Nov 23: Mochi's Midday walk moved to 11:00–11:30 — Shifted within the owner's 60-minute flex to fit around your plans.
+  moved:   Tue Nov 24: Luna's Breakfast moved to 09:00–09:05 — Shifted within the owner's 30-minute flex to fit around your plans.
+  moved:   Fri Nov 27: Mochi's Midday walk moved to 11:30–12:00 — Shifted within the owner's 60-minute flex to fit around your plans.
+  flagged: Tue Nov 24: Luna's Thyroid medication — Thyroid medication can't move (window 08:00–08:30). Ask the owner or a backup person to cover it, or reschedule your commitment.
+  flagged: Wed Nov 25: Luna's Dinner — No free time for Dinner within 18:00–18:30 ± 30 min. Ask the owner or a backup person to cover it, or reschedule your commitment.
+  flagged: Wed Nov 25: Mochi's Dinner — No free time for Dinner within 17:30–18:30 ± 30 min. Ask the owner or a backup person to cover it, or reschedule your commitment.
+
+SCHEDULE
+  Mon Nov 23
+    07:00-07:10  Mochi  Breakfast
+    08:00-08:05  Luna   Thyroid medication
+    08:05-08:10  Luna   Breakfast
+    11:00-11:30  Mochi  Midday walk  (moved)
+    11:30-13:30  YOU    Biology lab
+    17:30-17:40  Mochi  Dinner
+    18:00-18:05  Luna   Dinner
+    20:00-20:10  Luna   Litter box
+    21:00-21:20  Mochi  Evening walk
+  Tue Nov 24
+    07:00-07:10  Mochi  Breakfast
+    07:30-09:00  YOU    Dentist appointment
+    09:00-09:05  Luna   Breakfast  (moved)
+    12:00-12:30  Mochi  Midday walk
+    17:30-17:40  Mochi  Dinner
+    18:00-18:05  Luna   Dinner
+    20:00-20:10  Luna   Litter box
+    21:00-21:20  Mochi  Evening walk
+    -- NOT COVERED: Luna's Thyroid medication (08:00–08:30)
+  Wed Nov 25
+    07:00-07:10  Mochi  Breakfast
+    08:00-08:05  Luna   Thyroid medication
+    08:05-08:10  Luna   Breakfast
+    12:00-12:30  Mochi  Midday walk
+    16:30-19:30  YOU    Work shift
+    19:30-19:45  Mochi  Brushing
+    20:00-20:10  Luna   Litter box
+    21:00-21:20  Mochi  Evening walk
+    -- NOT COVERED: Luna's Dinner (18:00–18:30)
+    -- NOT COVERED: Mochi's Dinner (17:30–18:30)
+  Thu Nov 26
+    07:00-07:10  Mochi  Breakfast
+    08:00-08:05  Luna   Thyroid medication
+    08:05-08:10  Luna   Breakfast
+    12:00-12:30  Mochi  Midday walk
+    17:30-17:40  Mochi  Dinner
+    18:00-18:05  Luna   Dinner
+    20:00-20:10  Luna   Litter box
+    21:00-21:20  Mochi  Evening walk
+  Fri Nov 27
+    07:00-07:10  Mochi  Breakfast
+    08:00-08:05  Luna   Thyroid medication
+    08:05-08:10  Luna   Breakfast
+    11:30-12:00  Mochi  Midday walk  (moved)
+    12:00-13:00  YOU    Study group
+    17:30-17:40  Mochi  Dinner
+    18:00-18:05  Luna   Dinner
+    20:00-20:10  Luna   Litter box
+    21:00-21:20  Mochi  Evening walk
+  Sat Nov 28
+    07:00-07:10  Mochi  Breakfast
+    08:00-08:05  Luna   Thyroid medication
+    08:05-08:10  Luna   Breakfast
+    12:00-12:30  Mochi  Midday walk
+    17:30-17:40  Mochi  Dinner
+    18:00-18:05  Luna   Dinner
+    20:00-20:10  Luna   Litter box
+    21:00-21:20  Mochi  Evening walk
+  Sun Nov 29
+    07:00-07:10  Mochi  Breakfast
+    08:00-08:05  Luna   Thyroid medication
+    08:05-08:10  Luna   Breakfast
+    12:00-12:30  Mochi  Midday walk
+    17:30-17:40  Mochi  Dinner
+    18:00-18:05  Luna   Dinner
+    19:00-19:15  Mochi  Brushing
+    20:00-20:10  Luna   Litter box
+    21:00-21:20  Mochi  Evening walk
+
+ASK ABOUT CARE
+  Q: How much does Mochi eat for breakfast?
+  A: Here's what the owner's notes and care guides say:
+     - [1] Mochi's Breakfast: between 07:00–08:00, takes 10 minutes, high priority, every day. Can shift up to 30 m...
+  Q: Can I give Luna an extra pill tonight?
+  A: I can't advise changing, skipping, or doubling medication. Follow the owner's written instructions exactly. If a dose was missed or something seems wrong, call the vet (Maple Street Animal Clinic · 555-0199 · 210 Maple St (open 8am-6pm); After hours: Riverside 24-Hour Animal ER 555-0177. Backup: my sister Casey 555-0163) and the owner.

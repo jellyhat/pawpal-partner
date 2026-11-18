@@ -1,0 +1,83 @@
+
+$ python ask.py "How much does Mochi eat for breakfast?"
+# generated 2026-11-18 00:47 · Python 3.9.6 · offline mode · exit code 0
+
+Q: How much does Mochi eat for breakfast?
+Mode: offline (quoting sources)
+Guardrail: ok
+A:
+  Here's what the owner's notes and care guides say:
+  - [1] Mochi's Breakfast: between 07:00–08:00, takes 10 minutes, high priority, every day. Can shift up to 30 minutes if needed. Instructions: 1 cup of the salmon kibble from the blue bin plus 1 tbsp canned pumpkin. Feed in the kitchen, away from Luna's bowl.
+  - [2] Call the vet or an emergency animal hospital right away, even if the pet seems fine. Note what was eaten, about how much, and when. Do not try to make the pet vomit unless a vet tells you to.
+  - [3] Mochi's Dinner: between 17:30–18:30, takes 10 minutes, high priority, every day. Can shift up to 30 minutes if needed. Instructions: 1 cup of the salmon kibble. One dental chew after dinner. Must start at least 10 h after Mochi's Breakfast.
+  - [4] In an emergency: If a pet is hurt, can't breathe, has a seizure, or eats something toxic, call the vet first (or the 24-hour ER after 6pm), then call me. The pet carrier is in the hall closet and Mochi's leash hangs by the front door. Vaccination records are in the red folder on the fridge. My card is on file at both clinics.
+Sources:
+  [1] Routine: Mochi — Breakfast
+  [2] Foods and items that are dangerous to pets — If a pet eats something toxic
+  [3] Routine: Mochi — Dinner
+  [4] Owner's emergency procedures
+----------------------------------------------------------------------
+$ python ask.py "Where is Luna's pill?"
+# generated 2026-11-18 00:47 · Python 3.9.6 · offline mode · exit code 0
+
+Q: Where is Luna's pill?
+Mode: offline (quoting sources)
+Guardrail: ok
+A:
+  Here's what the owner's notes and care guides say:
+  - [1] Luna's Thyroid medication: between 08:00–08:30, takes 5 minutes, high priority, every day. Must stay inside this window. Instructions: 1/2 tablet of methimazole hidden in a pill pocket (on top of the fridge). Give within 30 minutes of 8:00 every day. Watch that she swallows it.
+  - [2] Luna's Breakfast: between 08:00–09:00, takes 5 minutes, high priority, every day. Can shift up to 30 minutes if needed. Instructions: Half a can of the senior pate on the laundry room shelf. Feed after her pill. Must start at least 5 min after Luna's Thyroid medication.
+  - [3] Health conditions: Hyperthyroidism, managed with daily medication. Mild kidney changes, so keep fresh water available. Medications: Methimazole 1/2 tablet every morning at 8:00 (see routine). Allergies: None known.
+  - [4] Many pets accept pills wrapped in a pill pocket, a small piece of cheese, or wet food, if the owner says that food is allowed. Watch to make sure the pill is swallowed and not spat out later.
+Sources:
+  [1] Routine: Luna — Thyroid medication
+  [2] Routine: Luna — Breakfast
+  [3] Luna's health, medications, and allergies
+  [4] Giving medication safely — Hiding pills
+----------------------------------------------------------------------
+$ python ask.py "Can I give Luna an extra pill tonight?"
+# generated 2026-11-18 00:47 · Python 3.9.6 · offline mode · exit code 0
+
+Q: Can I give Luna an extra pill tonight?
+Mode: offline (quoting sources)
+Guardrail: medication
+A:
+  I can't advise changing, skipping, or doubling medication. Follow the owner's written instructions exactly. If a dose was missed or something seems wrong, call the vet (Maple Street Animal Clinic · 555-0199 · 210 Maple St (open 8am-6pm); After hours: Riverside 24-Hour Animal ER 555-0177. Backup: my sister Casey 555-0163) and the owner.
+----------------------------------------------------------------------
+$ python ask.py "Is Tylenol safe for Mochi?"
+# generated 2026-11-18 00:47 · Python 3.9.6 · offline mode · exit code 0
+
+Q: Is Tylenol safe for Mochi?
+Mode: offline (quoting sources)
+Guardrail: human_medication
+A:
+  Do not give pets human pain relievers. Many (ibuprofen, acetaminophen, naproxen, aspirin) are toxic to dogs and cats. Call the vet (Maple Street Animal Clinic · 555-0199 · 210 Maple St (open 8am-6pm); After hours: Riverside 24-Hour Animal ER 555-0177. Backup: my sister Casey 555-0163) for advice.
+----------------------------------------------------------------------
+$ python ask.py "Mochi ate chocolate, what do I do?"
+# generated 2026-11-18 00:47 · Python 3.9.6 · offline mode · exit code 0
+
+Q: Mochi ate chocolate, what do I do?
+Mode: offline (quoting sources)
+Guardrail: emergency  [URGENT]
+A:
+  This may be an emergency. Call the vet or the nearest emergency animal hospital now (Maple Street Animal Clinic · 555-0199 · 210 Maple St (open 8am-6pm); After hours: Riverside 24-Hour Animal ER 555-0177. Backup: my sister Casey 555-0163), then contact the owner. Don't wait on this app.
+  
+  Here's what the owner's notes and care guides say:
+  - [1] Chocolate, grapes and raisins, xylitol (a sweetener found in sugar-free gum and some peanut butters), onions, garlic, macadamia nuts, alcohol, and cooked bones can all be dangerous to dogs. Keep trash and countertops clear.
+  - [2] Mochi is a 4 years old Shiba Inu (dog). Personality and habits: Pulls on the leash near squirrels. Gets anxious during thunderstorms; let him hide in his crate. Friendly with people, unsure of big dogs. Requirements and rules: Sleeps in the crate at night with the door open. Not allowed on the couch. Needs about an hour of walking a day. Loves the squeaky hedgehog toy.
+  - [3] Lilies (every part of the plant, even pollen or vase water) are extremely toxic to cats. Onions, garlic, chocolate, and grapes are also dangerous. Keep string, hair ties, and rubber bands out of reach because cats may swallow them.
+  - [4] In an emergency: If a pet is hurt, can't breathe, has a seizure, or eats something toxic, call the vet first (or the 24-hour ER after 6pm), then call me. The pet carrier is in the hall closet and Mochi's leash hangs by the front door. Vaccination records are in the red folder on the fridge. My card is on file at both clinics.
+Sources:
+  [1] Foods and items that are dangerous to pets — Dogs
+  [2] Owner's notes about Mochi
+  [3] Foods and items that are dangerous to pets — Cats
+  [4] Owner's emergency procedures
+----------------------------------------------------------------------
+$ python ask.py "What is the wifi password?"
+# generated 2026-11-18 00:47 · Python 3.9.6 · offline mode · exit code 0
+
+Q: What is the wifi password?
+Mode: offline (quoting sources)
+Guardrail: no_sources
+A:
+  I couldn't find anything about that in the owner's notes or the care guides. Please ask the owner directly.
