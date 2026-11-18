@@ -402,34 +402,35 @@ WARNING pawpal.guardrails: Guardrail: emergency language detected: 'Mochi ate ch
 
 ## Design decisions
 
-> **TODO (you):** Explain why you built it this way and what trade-offs you made. Some decisions you might discuss:
-> - Keeping the planner deterministic and making the AI go through a validator, instead of letting the model write the schedule.
-> - Using BM25 keyword retrieval instead of embeddings (it runs offline and is easy to evaluate, but misses paraphrases).
-> - An offline mode, so the app works without an API key.
-> - Storing data in a local JSON file instead of a hosted database (Supabase was tried and removed).
-> - Separate owner and sitter screens; "flex minutes" and task dependencies as the owner's way to express how strict timing is.
-> - Fixed guardrail replies for medication and emergencies instead of letting the model answer.
+I designed this for my own personal use since I am dog sitting two dogs, despite never having owned dogs before. In addition, they have a pretty regimented schedule and have some health issues that I need to remember. However, I still have my own schedule that I need to adhere to in terms of appointments, and it would be nice to just have something make my day for me and let me know when to feed these guys and do their daily cleanings.
+
+I wanted this to work based on what the owner would tell you, kind of a RAG system based on the owner's knowledge of their pet and what general dog knowledge exists, except prioritize what the owner will have to say. It works mostly in offline mode because I don't know when I would run out of tokens. It would also be useful for the owner and sitter to put in information on different screens so that they don't overlap. There are some guardrails regarding widely known medicine guidelines: questions about changing a dose or giving human medicine get a fixed, safe answer that points to the vet, instead of letting the AI respond.
 
 ## Testing summary
 
-> **TODO (you):** Summarize what worked, what didn't, and what you learned. Useful facts to draw on:
-> - `python -m pytest`: 74 tests (22 original Module 2, plus planner/AI, storage, and Streamlit UI tests). Claude is replaced by a fake client so the agent loop and answer guardrails can be tested without an API key.
-> - `python -m evaluation.evaluate` scorecard: planner scenarios 100%, retrieval hit@3 95% (hit@1 82%, MRR 0.88), guardrails 100%, conflict resolver 100%.
-> - Known miss: "Mochi skipped his dinner, should I worry?" retrieves the dinner routine instead of the appetite guide.
-> - Bugs the tests caught: an emergency phrase ("ate a bunch of grapes") that slipped past the guardrail, a crash in the pet selector, and form fields that reset after saving. The scorecard also caught a retrieval drop (hit@1 from 77% to 68%) after task dependencies were added. That was fixed, and a later species-aware boost (Mochi is a dog, so the "Dogs" guide outranks "Cats") raised hit@1 to 82%.
-> - Not yet verified: the live Claude paths (`python -m evaluation.evaluate --live` with an API key).
+`python -m pytest`: 74 tests (22 original Module 2, plus planner/AI, storage, and Streamlit UI tests). Claude is replaced by a fake client so the agent loop and answer guardrails can be tested without an API key.
+
+`python -m evaluation.evaluate` scorecard: planner scenarios 100%, retrieval hit@3 95% (hit@1 82%, MRR 0.88), guardrails 100%, conflict resolver 100%.
+
+- Bugs the tests caught: an emergency phrase ("ate a bunch of grapes") that slipped past the guardrail, a crash in the pet selector, and form fields that reset after saving. The scorecard also caught a retrieval drop (hit@1 from 77% to 68%) after task dependencies were added. That was fixed, and a later species-aware boost (Mochi is a dog, so the "Dogs" guide outranks "Cats") raised hit@1 to 82%.
+
+I also tested manually and found the schedules aligned well, although we had to create those tests for edge case time frames.
 
 ## Reflection
 
-> **TODO (you):** A brief note on what this project taught you about AI and problem-solving.
->
-> Reminder: the graded responsible-AI reflection (how you collaborated with AI, one suggestion you accepted and one you rejected or revised, and the system's limitations) goes in **`model_card.md`**, not here.
+
+This was an interesting exercise in using AI to expand something that already existed. I could tell that it took longer to adjust the existing code to my specifications, and there was more to take into account. However, it was quick to make test cases and sample accounts so that I could test in person, and give suggestions to more vague instructions.
+
 
 ---
 
 ## Reference
 
 ### App walkthrough
+
+![PawPal+ Sitter demo: choosing a role, editing an owner's routine with a task dependency, then a sitter picking the owner and pets, adding a commitment, and viewing the weekly schedule](assets/pawpalpartner.gif)
+
+*Demo: the role picker → an owner's daily routine (tasks with time windows and a "≥ 8 h after breakfast" dependency) → a sitter choosing the owner and pets, setting a weekly plan, adding a dentist appointment, and getting a schedule with no conflicts.*
 
 **Owner:** pick or create your profile, then:
 - **🐾 My pets:** add a pet and edit its **Profile & traits**, **Health**, and **Daily routine**. Click a task name to edit it. A task can be set to start at least N hours after another task.

@@ -1,61 +1,43 @@
 # Model Card: PawPal+ Sitter
 
-> **TODO (you):** Fill in every section marked TODO. This file holds the graded responsible-AI reflection; reflection written only in the README doesn't count.
 
 ## System overview
 
-> **TODO (you):** In 2–3 sentences, describe what the AI does in PawPal+ Sitter and who uses it.
->
-> *Facts you can use:* Claude (`claude-opus-5-5`, via the Anthropic API) does two jobs:
-> 1. It answers sitters' care questions using retrieved owner notes and care guides (RAG).
-> 2. It resolves schedule conflicts through a tool-using agent.
->
-> Without an API key, both fall back to non-AI behavior: answers quote the retrieved notes directly, and conflicts go to a rule-based resolver.
+
+PawPal+ Sitter allows the owner to give care instructions that are used in a RAG way for the sitter. It also uses agents to fix schedule conflicts that the sitter has in terms of the care schedule.
+
 
 ## Intended use and users
 
-> **TODO (you):** Who is this for, and what should it *not* be used for? For example, is it a substitute for a vet, or for the owner's own judgment?
+It is intended to be used between owners of pets and people who would like to take care of them. Friends, coworkers, or even if a pound would like to foster a pet to someone else, they can pass on the care instructions and the user can determine if they can handle that kind of pet.
 
 ---
 
 ## 1. How did you collaborate with AI on this project?
 
-> **TODO (you):** Describe how you worked with an AI assistant while building this. What did you ask it to do? What did you decide yourself? How did you check its work?
+I gave AI a bird's-eye view of what I wanted the app to accomplish, as well as what my average happy path looked like. It was able to come up with a mock up that we adjusted, as well as using the old diagrams we adjusted until we got to the finalpawpal.mmd.
 
 ## 2. One AI suggestion you accepted
 
-> **TODO (you):** Describe one suggestion you accepted, why you accepted it, and how you verified it was correct.
+Originally I thought about having the database in Supabase, because that was what I was used to. However AI had come up with an offline plan that saved the data in JSON and I felt like this was more usable for the demo that I would have to present, and for future uses, as Supabase tends to close the tables of unused projects.
 
 ## 3. One AI suggestion you rejected or revised
 
-> **TODO (you):** Describe one suggestion you rejected or changed, what was wrong or didn't fit, and what you did instead.
+It wanted a lot of required fields for the owner, but since I wanted just a working model without too much real data (so I didn't want to put in a real vet, real email, real phone number), it was good enough to make those optional. It's also possible that if it was a lost pet or a pound pet, it would not have a ready vet or owner number to have.
 
 ## 4. Limitations of the system
 
-> **TODO (you):** What can the system not do well, and where could it be wrong or cause harm?
->
-> *Limitations you've seen in this project, to choose from or add to:*
-> - **Keyword retrieval.** It misses paraphrases. For example, "Mochi skipped his dinner, should I worry?" returns the dinner routine instead of the appetite guide. hit@1 is 82% on the evaluation set.
-> - **Keyword guardrails.** The emergency and medication checks match phrases, so unusual wording could slip past.
-> - **Live Claude paths are unverified.** Claude's answers and agent behavior were only tested with a fake client, not against the real API.
-> - **Owner notes are trusted.** If the owner writes something wrong, the app repeats it.
-> - **No accounts.** Anyone using the app can see and edit every owner's data, and it only runs on one computer.
-> - **Limited care guides.** The six guides in `knowledge/` were written for this project and haven't been reviewed by a vet.
+It misses paraphrases. For example, "Mochi skipped his dinner, should I worry?" returns the dinner routine instead of the appetite guide. hit@1 is 82% on the evaluation set. The emergency and medication checks match phrases, so unusual wording could slip past. If the owner writes something wrong, the app repeats it.
+
+In the end, I have limited knowledge and the program really depends on what the users put in, so the adage "garbage in, garbage out" applies here. 
 
 ## 5. Risks, misuse, and safeguards
 
-> **TODO (you):** What could go wrong if someone relied on this? What safeguards did you build, and are they enough?
->
-> *Safeguards in the code:*
-> - Medication-change and human-medicine questions get a fixed reply.
-> - Emergency questions put "call the vet now" first.
-> - Answers must cite real sources and can't introduce amounts that aren't in the notes.
-> - The agent can't move zero-flex tasks or delete anything, and every change is logged and can be undone.
+Much like the last question, the owner could be wrong about something, or not specify an important fact. There are some safeguards, even more if you managed to have a real AI api key to use, but there are at least some vet emergency contacts and medicines that are common knowledge that it can catch.
 
 ## 6. Testing and evaluation results
 
-> **TODO (you):** Summarize how you tested the AI parts and what the results showed.
->
+
 > *Facts:*
 > - `python -m pytest` runs 74 passing tests.
 > - `python -m evaluation.evaluate` scores:
@@ -64,6 +46,10 @@
 >   - guardrails 100%
 >   - conflict resolver 100%
 
+I also tested manually to see how it would make a schedule and everything checked out.
+
 ## 7. What would you improve next?
 
-> **TODO (you):** Name one or two improvements and why they matter. For example: embedding-based retrieval, user accounts, a vet-reviewed knowledge base, or running the live evaluation with Claude.
+I would really like to improve the UI, I think it could use some work to make it more friendly to see the schedule or add specifications. In addition, some pets rely on each other, like I can feed two pets at the same time but perhaps one pet cannot be in the same room as the other when it's eating. 
+
+
